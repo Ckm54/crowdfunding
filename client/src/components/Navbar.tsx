@@ -96,7 +96,10 @@ const Navbar = () => {
               title={address ? 'Create a campaign' : 'Connect'}
               styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
               handleClick={() => {
-                if(address) navigate('create-campaign')
+                if(address) {
+                  navigate('create-campaign');
+                  setToggleDrawer(false);
+                }
                 else connect()
               }}
             />
