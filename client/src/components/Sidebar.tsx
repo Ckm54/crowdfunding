@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { logo, sun } from '../assets';
 import { navlinks } from '../constants';
 
-type IconProps = {
+interface IconProps {
   // 👇️ type as React.CSSProperties
   styles?: string;
   imgUrl: string;
