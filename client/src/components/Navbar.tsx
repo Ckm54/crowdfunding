@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { ContextType, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
+import { ContractContextType, StateContext } from '../context';
 
 import { CustomButton } from './';
 import { logo, menu, search, thirdweb } from '../assets';
@@ -11,9 +13,8 @@ const Navbar = () => {
   const [isActive, setIsActive] = useState('dashboard');
   const [toggleDrawer, setToggleDrawer] = useState(false);
 
-  const address = '0xabcdef';
+  const { address, connect } = React.useContext(StateContext) as ContractContextType;
 
-  const connect = () => {}
 
   return (
     <div className='flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6'>
@@ -54,7 +55,7 @@ const Navbar = () => {
       <div className='sm:hidden flex justify-between items-center relative'>
         <div className='w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center items-center cursor-pointer'>
           <img
-            src={thirdweb}
+            src={logo}
             alt='user_profile'
             className='w-[60%] h-[60%] object-contain'
           />
