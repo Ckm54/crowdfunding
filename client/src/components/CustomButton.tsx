@@ -4,7 +4,7 @@ interface BtnProps {
   btnType: ('button' | 'submit' | 'reset');
   title: string;
   styles: string;
-  handleClick: MouseEventHandler;
+  handleClick?: MouseEventHandler;
 }
 
 const CustomButton = ({btnType, title, styles, handleClick}: BtnProps) => {
